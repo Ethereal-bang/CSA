@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey; }
+
+#container {
+  width: 400px;
+  margin-top: 50px;
+  background-color: #FFFF; }
+  #container header {
+    width: 100%;
+    height: 60px;
+    margin: 0; }
+    #container header span {
+      display: inline-block;
+      margin-top: 20px;
+      color: grey; }
+    #container header :first-child {
+      margin-left: 20px; }
+    #container header :nth-child(2) {
+      margin-left: 20px;
+      color: black;
+      font-size: large; }
+    #container header img {
+      float: right;
+      height: 100%; }
+    #container header hr {
+      width: 64px;
+      height: 3px;
+      margin-left: 125px;
+      background-color: blue; }
+
+#body {
+  width: 90%;
+  margin: 20px 0 0 20px; }
+  #body form {
+    height: 170px; }
+    #body form input {
+      border: none; }
+    #body form a, #body form a:link, #body form a:visited {
+      text-decoration: none;
+      font-size: small; }
+    #body form :nth-child(6) {
+      display: inline-block;
+      float: right;
+      color: gray; }
+    #body form button {
+      display: block;
+      width: 100%;
+      height: 25px;
+      background-color: #0066ff;
+      border: none;
+      margin-top: 20px;
+      color: #FFF; }
+  #body p {
+    font-size: small;
+    color: gray; }
+
+#login {
+  margin-top: 20px; }
+  #login :first-child {
+    font-size: small;
+    color: gray; }
+  #login div {
+    display: inline-block;
+    margin-left: 35px; }
+
+footer {
+  height: 50px;
+  background-color: #f6f6f6;
+  padding: 0 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  footer span {
+    text-align: center; }
+
+/*# sourceMappingURL=style.css.map */

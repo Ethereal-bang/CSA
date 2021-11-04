@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 20px 10px;
+  background-color: #dedede; }
+
+#first {
+  background-color: #FFF;
+  padding: 20px; }
+
+#imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around; }
+
+.image {
+  width: 120px;
+  height: 110px;
+  border: 1px solid #dedede; }
+  .image span {
+    display: block;
+    text-align: center; }
+  .image img {
+    margin-left: 10px; }
+
+article {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #FFFFFF; }
+  article table {
+    width: 100%;
+    text-align: left; }
+    article table thead {
+      background-color: black;
+      color: #FFFFFF; }
+    article table tfoot {
+      background-color: #dedede;
+      color: black; }
+
+/*# sourceMappingURL=style.css.map */
