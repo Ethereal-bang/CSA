@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+        let res = null;
+        (function input() {
+            res = window.prompt("请输入一个数字：")
+            let squares;
+            try {   // 捕获eval的错误
+                squares = eval(res);
+            } catch (err) {
+                input();
+            }
+
+            if (typeof squares !== "number") {
+            } else {
+                window.alert(`你输入的数字平方后为：${squares}`)
+            }
+        })();
+
+
+        console.log(eval(res))
+    </script>
+</body>
+</html>
