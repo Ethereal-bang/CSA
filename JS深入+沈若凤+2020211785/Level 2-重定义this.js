@@ -3,7 +3,7 @@ function Course() {
     this.semester = 2;
 }
 function Student(name, age, gender) {
-    Course.apply(this, arguments)
+    Course.apply(this, arguments);  // Constructor stealing继承
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -11,15 +11,18 @@ function Student(name, age, gender) {
         let	detail = function() {
             console.log(this.gender);
         }
-        detail();
-        console.log("!:", this.gender)
+        // 第一种：
+        detail.apply(this);
     }
+    // 第二种：
+    // this.moreInfo = () => {
+    //     let	detail = () => {
+    //         console.log(this.gender);
+    //     }
+    //     detail();
+    // }
 }
-// prototype 继承：
-// Student.prototype = new Course()
-// Student.prototype.constructor = Student;    // 不加则为Course
 
 let student1 = new Student("小明", 18, "男");
-console.log(student1.coursename,student1.semester);
+console.log(student1.coursename, student1.semester);
 student1.moreInfo();
-// console.log(student1.gender)
