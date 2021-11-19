@@ -12,8 +12,8 @@ var data = {
     },
     play: function() {    console.log("玩滑板");  }
 }
-// 一：object.create()
-let data2 = Object.create(data, {});
+// 一：object.create() （不能实现
+
 // 二：扩展运算符
 let data3 = {...data};
 
