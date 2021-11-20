@@ -18,7 +18,9 @@ var data = {
 * */
 function deepClone(target, source) {
     // 1. target即每个object类型存放地址
-    if (!target) {
+    if (source === null) {  // 不然null会复制为{}
+        return source;
+    } else if (!target) {
         target = {};
     }
 
@@ -28,7 +30,14 @@ function deepClone(target, source) {
         if (typeof source[key] !== "object") {
             target[key] = source[key];
         }
-        // 2.2 source[key]为引用类型——递归
+
+        // 2.2 source[key]为Array——递归
+        else if (Array.isArray(source[key])) {
+            target[key] = [];
+            target[key] = deepClone(target[key], source[key])
+        }
+
+        // 2.3 source[key]为Object——递归
         else {
             target[key] = deepClone(target[key], source[key]);
         }
@@ -37,6 +46,6 @@ function deepClone(target, source) {
 }
 
 let data1 = deepClone(undefined, data);
-data1.education = ["test"]  // 但是数组全复制成了对象
+data1.education.push("test");
 console.log("data:", data)
 console.log("data1:", data1)
