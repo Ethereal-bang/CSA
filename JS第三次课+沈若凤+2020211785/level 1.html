@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 1</title>
+</head>
+<body>
+    <button>更改主题颜色</button>
+    <button>更改字体大小</button>
+    <h1>Level 1</h1>
+</body>
+<script>
+    const h1 = document.getElementsByTagName('h1')[0];
+    const btn1 = document.getElementsByTagName('button')[0];
+    const btn2 = document.getElementsByTagName('button')[1];
+    const body = document.getElementsByTagName('body')[0];
+
+    let flagToColor = false;   // 标记颜色切换状态
+    btn1.addEventListener('click', () => {
+        body.style.backgroundColor = flagToColor ? 'white' : 'green';
+        flagToColor = !flagToColor;
+    })
+
+    let fontSize = 32;
+    btn2.addEventListener('click', () => {
+        console.log(h1.style.fontSize)
+        fontSize += 5;
+        h1.style.fontSize = fontSize + "px";
+    })
+</script>
+</html>

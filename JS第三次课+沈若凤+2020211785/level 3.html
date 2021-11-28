@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level 3——留言板</title>
+</head>
+<body>
+    <label>
+        留言板
+        <textarea></textarea>
+        <button type="submit">发布</button>
+    </label>
+</body>
+<script>
+    const btn = document.getElementsByTagName('button')[0];
+    const text = document.getElementsByTagName('textarea')[0];
+    const label = document.getElementsByTagName('label')[0];
+
+    btn.addEventListener('click', () => {
+        let mes = document.createElement('div');
+        // 留言内容
+        mes.innerHTML = `<span>${text.value}</span>`
+        text.value = '';    // 清除
+        // 删除按钮
+        const dBtn = document.createElement('button');
+        dBtn.innerHTML = '删除'
+        dBtn.addEventListener('click', (e) => {
+            label.removeChild(mes);
+        })
+        label.appendChild(mes);
+        mes.appendChild(dBtn);
+    })
+</script>
+</html>
