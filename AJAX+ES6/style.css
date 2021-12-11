@@ -1,0 +1,28 @@
+#recommend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.textUnderImg {
+    font-size: 10px;
+    width: 100%;
+}
+
+.textInImg {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: aliceblue;
+    font-size: 8px;
+}
+
+.box {
+    position: relative;
+}
+
+.imgBox {
+    height: 170px;
+    width: 150px;
+    margin: 10px 10px;
+}
