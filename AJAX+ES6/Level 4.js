@@ -22,11 +22,11 @@ const ajax = (options) => {
         }
     })
 }
+
 ajax({
     url: 'http://cloud-music.pl-fe.cn/personalized',
     data: {limit: 2}
-}).then(data => {
-    console.log(data)
-}).catch(err => {
+}).then(callback)
+    .catch(err => {
     console.log(err);
 })

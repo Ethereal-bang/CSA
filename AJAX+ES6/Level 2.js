@@ -25,11 +25,10 @@ function ajax({
 }
 
 // 调用：
-const recommend = document.getElementById("recommend");
 function callback(res) {
     res = JSON.parse(res);
     let list = res.result;
-    for (let i = 0; i <= 2; i++) {
+    for (let i = 0; i <= 2 - 1; i++) {  // 渲染两条
         let div = document.createElement("div");
         div.setAttribute("class", "box");
         div.innerHTML = `

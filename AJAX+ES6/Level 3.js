@@ -61,10 +61,8 @@ class Ajax {
     }
 }
 
-const ajax = new Ajax();
-ajax.get("http://cloud-music.pl-fe.cn/personalized", {
-    success: (data) => {
-        console.log(data)
-    },
+const ajax3 = new Ajax();
+ajax3.get("http://cloud-music.pl-fe.cn/personalized", {
+    success: callback,
     data: {limit: 2}
 });
