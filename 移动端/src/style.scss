@@ -1,0 +1,66 @@
+html, body {
+  height: 100vh;
+}
+body, hr {
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: rgb(49, 124, 251);
+  width: 92vw;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  color: rgb(236, 242, 253);
+  font-size: 1.7rem;
+}
+#timeBar {
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12vh;
+  font-size: 1.7rem;
+}
+#hideFolder {
+  display: none;
+}
+#showFolder {
+  display: block;
+  font-size: 2.7vh;
+  text-align: center; // div内文字水平居中
+  line-height: 5vh; // div内文子垂直居中
+  div {
+    height: 5vh;
+    border: #ededff 0.2vh dashed;
+  }
+}
+section {
+  height: 81vh;
+  overflow-y: auto;
+  .show {
+    height: 8vh;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: rgb(85, 153, 252);
+    p, img, div {
+      height: 100%;
+    }
+    p {
+      width: 25vw;
+      margin: 0;
+    }
+    div {
+      width: 62vw;
+    }
+  }
+   > a > img {
+    position: fixed;
+    bottom: 10vh;
+    right: 7vw;
+  }
+}

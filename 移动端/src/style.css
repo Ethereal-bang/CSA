@@ -1,0 +1,61 @@
+html, body {
+  height: 100vh; }
+
+body, hr {
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-color: #317cfb;
+  width: 92vw;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  color: #ecf2fd;
+  font-size: 1.7rem; }
+
+#timeBar {
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12vh;
+  font-size: 1.7rem; }
+
+#hideFolder {
+  display: none; }
+
+#showFolder {
+  display: block;
+  font-size: 2.7vh;
+  text-align: center;
+  line-height: 5vh; }
+  #showFolder div {
+    height: 5vh;
+    border: #ededff 0.2vh dashed; }
+
+section {
+  height: 81vh;
+  overflow-y: auto; }
+  section .show {
+    height: 8vh;
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    color: #5599fc; }
+    section .show p, section .show img, section .show div {
+      height: 100%; }
+    section .show p {
+      width: 25vw;
+      margin: 0; }
+    section .show div {
+      width: 62vw; }
+  section > a > img {
+    position: fixed;
+    bottom: 10vh;
+    right: 7vw; }
+
+/*# sourceMappingURL=style.css.map */
