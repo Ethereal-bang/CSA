@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="description"
+          content="墨迹天气预报app，全球约6.5亿人在使用的天气app，支持199个国家20多万个城市及地区的天气预报查询，下载墨迹天气预报app，实时监测阴晴雨雪，实时空气质量及空气质量等级预报。">
+    <meta name="keywords" content="墨迹天气预报,天气预报app,天气预报软件,天气软件下载,手机天气软件">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <title>墨迹天气中文官方网站 - 让气象赋能全世界！</title>
+    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="style/search_page.css">
+    <link rel="stylesheet" href="style/home_page.css">
+</head>
+<body>
+<div id="search_page">
+    <header>
+        <div id="return"></div>
+        <p><input type="text" placeholder="请输入城市名"></p>
+    </header>
+    <!--当前城市-->
+    <section class="cities_list">
+        <p>当前城市</p>
+        <ul>
+            <li class="chosen_li">
+                <a>重庆市</a>
+            </li>
+        </ul>
+    </section>
+    <!--添加记录-->
+    <section class="cities_list" id="record">
+        <p>添加记录</p>
+        <p id="clearBtn">删除</p>
+        <ul>
+            <li><a>深圳市</a></li>
+            <li><a>上海市</a></li>
+        </ul>
+    </section>
+    <!--热搜城市-->
+    <section class="cities_list">
+        <p>热搜城市</p>
+        <ul id="hot_cities">
+
+        </ul>
+    </section>
+</div>
+</body>
+<script rel="script" src="main.js"></script>
+</html>
