@@ -1,0 +1,27 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; }
+
+body {
+  padding-bottom: 64px; }
+
+.showNone {
+  display: none; }
+
+.showBlock {
+  display: block; }
+
+#download {
+  position: fixed;
+  bottom: -.2rem; }
+  #download img {
+    width: 100vw; }
+  #download span {
+    width: 33px;
+    height: 33px;
+    position: absolute;
+    right: 4%;
+    top: 30%; }
+
+/*# sourceMappingURL=global.css.map */

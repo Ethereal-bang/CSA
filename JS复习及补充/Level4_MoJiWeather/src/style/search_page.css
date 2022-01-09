@@ -1,6 +1,5 @@
 @charset "UTF-8";
 #search_page {
-  height: 100vh;
   width: 100vw;
   position: absolute;
   top: 0;
@@ -66,5 +65,18 @@
     display: inline-block; }
   #search_page #record #clearBtn {
     float: right; }
+  #search_page #cities_list {
+    margin: 0 10px;
+    padding: 0;
+    list-style: none; }
+    #search_page #cities_list li {
+      border-bottom: 1px solid #dcdbe1; }
+      #search_page #cities_list li a {
+        color: #555;
+        font-size: 1.2rem;
+        line-height: 3.4rem; }
+  #search_page #hot_cities {
+    margin-bottom: 64px;
+    /*页脚留白给下载页*/ }
 
 /*# sourceMappingURL=search_page.css.map */

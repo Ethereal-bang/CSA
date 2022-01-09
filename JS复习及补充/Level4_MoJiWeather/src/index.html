@@ -9,21 +9,102 @@
     <meta content="yes" name="apple-touch-fullscreen">
     <title>墨迹天气中文官方网站 - 让气象赋能全世界！</title>
     <link rel="icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/search_page.css">
     <link rel="stylesheet" href="style/home_page.css">
+    <script src="./script/echarts.min.js"></script>
 </head>
 <body>
-<div id="search_page">
+<div id="home_page">
+    <div class="background">
+        <header>
+            <div id="navigate"></div>
+            <p>重庆市</p>
+        </header>
+        <div id="info_box">
+            <a href="https://html5.moji.com/tpd/gzbd/index.html">
+                <img src="../assets/yiqing.png" alt="icon">
+                疫情资讯
+            </a>
+            <a href="https://html5.moji.com/tpd/safetravel/safetravel.html?t=1580984067263">
+                <img src="../assets/mask.png" alt="icon">
+                安全出行
+            </a>
+            <div class="weather">霾</div>
+            <div id="degree">
+                <span>12</span>
+                <p>东北风1级&nbsp;湿度74%</p>
+                <p>天冷了，该加衣服了！</p>
+            </div>
+            <div id="aqi">
+                <a>
+                    <span><img src="../assets/aqi.png" alt="aqi"></span>
+                    <span id="">147 轻度污染</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="days">
+        <div>
+            <span>今天</span>
+            <span>轻度</span>
+            <span>阴</span>
+            <span>6 / 10°</span>
+            <img src="../assets/weather/rain.png" alt="weather">
+        </div>
+        <div>
+            <span>明天</span>
+            <span>良</span>
+            <span>阴</span>
+            <span>4 / 9°</span>
+            <img src="../assets/weather/cloudy.png" alt="weather">
+        </div>
+    </div>
+    <div id="temper">
+        <div id="tabs">
+            <span>日落 18:03</span>
+            <span class="active">温度</span>
+            <span>风力</span>
+            <strong>24小时</strong>
+        </div>
+    </div>
+    <div id="week_weather">
+        <ul class="week"></ul>
+        <ul class="weather"></ul>
+        <ul class="icons"></ul>
+        <div id="echarts"></div>
+        <ul class="icons"></ul>
+        <ul class="weather"></ul>
+        <ul class="api">
+            <li>良</li>
+            <li>良</li>
+            <li>良</li>
+            <li>良</li>
+            <li>良</li>
+            <li>良</li>
+            <li>良</li>
+        </ul>
+        <ul class="wind"></ul>   <!--日间风向-->
+        <ul class="wind"></ul>   <!--日间风力等级-->
+    </div>
+    <ul id="exponent"></ul>
+    <footer>
+        本页面由<strong>墨迹天气</strong>提供
+    </footer>
+</div>
+<div id="search_page" style="display: none">
     <header>
         <div id="return"></div>
         <p><input type="text" placeholder="请输入城市名"></p>
     </header>
+    <!--城市搜索列表-->
+    <ul id="cities_list"></ul>
     <!--当前城市-->
     <section class="cities_list">
         <p>当前城市</p>
         <ul>
-            <li class="chosen_li">
-                <a>重庆市</a>
+            <li class="chosen_li" id="current_city">
+                <a>重庆</a>  <!--默认重庆市-->
             </li>
         </ul>
     </section>
@@ -31,19 +112,24 @@
     <section class="cities_list" id="record">
         <p>添加记录</p>
         <p id="clearBtn">删除</p>
-        <ul>
-            <li><a>深圳市</a></li>
-            <li><a>上海市</a></li>
-        </ul>
+        <ul id="record_list"></ul>
     </section>
     <!--热搜城市-->
     <section class="cities_list">
         <p>热搜城市</p>
         <ul id="hot_cities">
-
+            Loading...
         </ul>
     </section>
 </div>
+<div id="download" style="display: block">
+    <img src="../assets/download.png" alt="png">
+    <span id="close_btn"></span>
+</div>
 </body>
-<script rel="script" src="main.js"></script>
+
+<script rel="script" src="script/screen.js"></script>
+<script type="module" rel="script" src="script/ajax.js"></script>
+<script type="module" rel="script" src="script/main.js"></script>
+<script type="module" rel="script" src="script/search_page.js"></script>
 </html>
