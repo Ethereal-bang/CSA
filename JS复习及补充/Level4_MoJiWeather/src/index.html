@@ -30,49 +30,58 @@
                 <img src="../assets/mask.png" alt="icon">
                 安全出行
             </a>
-            <div class="weather">霾</div>
-            <div id="degree">
-                <span>12</span>
-                <p>东北风1级&nbsp;湿度74%</p>
-                <p>天冷了，该加衣服了！</p>
-            </div>
+            <div class="weather"></div>
+            <div id="degree"></div>
             <div id="aqi">
                 <a>
                     <span><img src="../assets/aqi.png" alt="aqi"></span>
-                    <span id="">147 轻度污染</span>
+                    <span class="api"></span>
                 </a>
             </div>
         </div>
     </div>
     <div id="days">
         <div>
-            <span>今天</span>
-            <span>轻度</span>
-            <span>阴</span>
-            <span>6 / 10°</span>
-            <img src="../assets/weather/rain.png" alt="weather">
+            <div>
+                <span>今天</span>
+                <span>良</span>
+                <span>6 / 10°</span>
+            </div>
+            <div>
+                <span>阴</span>
+                <img src="../assets/weather/rain.png" alt="weather">
+            </div>
         </div>
         <div>
-            <span>明天</span>
-            <span>良</span>
-            <span>阴</span>
-            <span>4 / 9°</span>
-            <img src="../assets/weather/cloudy.png" alt="weather">
+            <div>
+                <span>明天</span>
+                <span>轻度</span>
+                <span>6 / 10°</span>
+            </div>
+            <div>
+                <span>阴</span>
+                <img src="../assets/weather/rain.png" alt="weather">
+            </div>
         </div>
     </div>
     <div id="temper">
-        <div id="tabs">
+        <div class="tabs1">
             <span>日落 18:03</span>
+            <strong>24小时</strong>
+        </div>
+        <div class="tabs2">
             <span class="active">温度</span>
             <span>风力</span>
             <strong>24小时</strong>
+            <div class="echarts"></div>
         </div>
     </div>
+    <div></div>
     <div id="week_weather">
         <ul class="week"></ul>
         <ul class="weather"></ul>
         <ul class="icons"></ul>
-        <div id="echarts"></div>
+        <div class="echarts"></div>
         <ul class="icons"></ul>
         <ul class="weather"></ul>
         <ul class="api">

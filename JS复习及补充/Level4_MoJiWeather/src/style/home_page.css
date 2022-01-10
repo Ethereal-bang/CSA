@@ -119,16 +119,35 @@
           width: 1.4rem;
           vertical-align: middle;
           display: inline-block; }
+      #info_box #aqi > a > span:nth-child(0n+2) {
+        padding: 0 17px 0 4px; }
 
 #days {
   height: 5.6rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1); }
   #days > div {
+    /*左、右栏*/
     width: 49%;
     height: 5.6rem;
     display: inline-block;
     font-size: 1.2rem;
+    line-height: 1.6rem;
     box-sizing: border-box; }
+    #days > div > div {
+      /*单栏内上下板块*/
+      padding: .7rem 10px 0; }
+      #days > div > div span:nth-child(0n+2) {
+        /*api等级*/
+        width: 3rem;
+        height: 1.6rem;
+        display: inline-block;
+        margin-left: 10px;
+        text-align: center;
+        background-color: #d7af0e;
+        border-radius: .7rem; }
+      #days > div > div span:nth-child(0n+3) {
+        /*温度*/
+        float: right; }
     #days > div img {
       height: 2.2rem;
       float: right; }
@@ -137,38 +156,47 @@
     border-right: 1px solid rgba(255, 255, 255, 0.1); }
 
 #temper {
-  height: 27px;
-  border-width: 1px; }
-  #temper #tabs {
+  border-width: 1px;
+  background: rgba(255, 255, 255, 0.1); }
+  #temper .tabs1, #temper .tabs2 {
     height: 2.4rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    /*24小时*/ }
-    #temper #tabs > span {
-      width: 4rem;
+    position: relative; }
+    #temper .tabs1 > span, #temper .tabs2 > span {
       height: 2.4rem;
       display: inline-block;
-      margin: 0 10px;
+      padding: 0 10px;
+      /*这里用padding不用margin是为了让border占满整个盒子下部*/
       text-align: center;
       font-weight: 400;
       line-height: 2.4rem; }
-    #temper #tabs > span:first-child {
-      width: auto; }
-    #temper #tabs .active {
-      border-bottom: 1px solid #fff; }
-    #temper #tabs > strong {
-      float: right;
+    #temper .tabs1 > strong, #temper .tabs2 > strong {
+      /*24小时*/
       height: 1.5rem;
-      margin: 0.5rem 10px 0 0;
+      float: right;
+      margin: 0.5rem 12px 0 0;
       padding: 0 2rem 0 0;
-      background: url("../../assets/tabs/arrow.png") right top no-repeat;
-      background-size: 1.5rem auto; }
+      font-weight: normal; }
+  #temper .tabs1 > strong {
+    background: url("../../assets/tabs/arrow.png") right top no-repeat;
+    background-size: 1.5rem auto; }
+  #temper .tabs2 .active {
+    border-bottom: 1px solid #fff; }
+  #temper .tabs2 > strong {
+    /*上箭头*/
+    background: url("../../assets/tabs/arrow.png") right bottom no-repeat;
+    background-size: 1.5rem auto; }
+  #temper .echarts {
+    width: 100%;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.1); }
 
 #week_weather {
   width: 100%;
   height: 33rem;
   position: relative;
+  margin-top: 110px;
+  /*给上面曲线留白*/
   color: #ffffff; }
   #week_weather > ul {
     width: 100%;
@@ -191,7 +219,7 @@
   #week_weather ul:nth-child(0n+3) {
     /*白天天气图标*/
     top: 6.2rem; }
-  #week_weather #echarts {
+  #week_weather .echarts {
     position: absolute;
     top: 5rem; }
   #week_weather ul:nth-child(0n+5) {

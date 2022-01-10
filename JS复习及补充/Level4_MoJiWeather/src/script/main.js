@@ -5,7 +5,13 @@ const location = "101040100";
 const navigate = document.getElementById("navigate");   // 跳转到搜索页
 const homePage = document.getElementById("home_page");
 const searchPage = document.getElementById("search_page");
-const temper = document.getElementById("echarts");
+// 实时天气
+const nowWeather = document.getElementsByClassName("weather")[0];
+const nowDegree = document.getElementById("degree");
+const nowApi = document.getElementsByClassName("api")[0];
+const temperEcharts = document.getElementsByClassName("echarts")[0];
+
+const weatherEcharts = document.getElementsByClassName("echarts")[1];
 const week = document.getElementsByClassName("week")[0];
 const dayWeather = document.getElementsByClassName("weather")[1];  // 一周天气——日间
 const dayIcons = document.getElementsByClassName("icons")[0];  // 白天天气图标
@@ -17,6 +23,8 @@ const exponent = document.getElementById("exponent");
 const download = document.getElementById("download");
 const closeBtn = document.getElementById("close_btn");
 
+const width = window.innerWidth;
+
 // 跳转到搜索页:
 {
     navigate.addEventListener("click", () => {
@@ -25,6 +33,102 @@ const closeBtn = document.getElementById("close_btn");
         // 搜索页显示
         searchPage.setAttribute("style", "display: block");
     })
+}
+
+// 实时天气、生活指数
+{
+    ajax({url: "https://devapi.qweather.com/v7/weather/now", data: {key, location}})
+        .then(data => {
+            const {now} = data;
+            console.log(now)
+            nowWeather.innerHTML = now.text;
+            nowDegree.innerHTML = `
+            <span>${now.temp}</span>
+            <p>${now.windDir}${now.windScale}级 湿度${now.humidity}%</p>
+            `
+        })
+        // 等实时天气中内容加载完
+        .then(() => ajax({
+                url: "https://devapi.qweather.com/v7/indices/1d",
+                data: {key, location, type: 0}
+            })
+                .then(data => {
+                    const {daily} = data;
+                    let innerHTML = "";
+                    daily.map(item => {
+                        // 天气描述用感冒指数描述代替:
+                        if (item.type.toString() === "9") {
+                            nowDegree.innerHTML += `<p>${item.text}</p>`
+                        }
+                        innerHTML += `<li>
+                <img src="../assets/exponent/default.png" alt="icon" />
+                <span>${item.name.slice(0, -2)}<br>${item.category}</span>
+            </li>`
+                    })
+                    exponent.innerHTML = innerHTML;
+                })
+        )
+}
+
+// 实时空气质量
+{
+    ajax({url: "https://devapi.qweather.com/v7/air/now", data: {key, location}})
+        .then(data => {
+            const { now } = data;
+            console.log(now)
+            nowApi.innerHTML = `${now.aqi} ${now.category}`
+        })
+}
+
+// 今明天气
+
+// 24小时温度、风力
+{
+    const hour = new Date().getHours();
+    const myEcharts = echarts.init(temperEcharts, null, {
+        width:2000,
+        height: 110,
+    });
+    ajax({url: "https://devapi.qweather.com/v7/weather/24h", data: {key, location}})
+        .then(data => {
+            const { hourly } = data;
+            console.log(hourly)
+            const tempArr = [], hourArr = [];
+            hourly.map(item => {
+                tempArr.push(item.temp);
+                hourArr.push(item.fxTime.slice(11,13))
+            })
+            console.log(hourArr)
+            const options = {
+                xAxis: {
+                    type: "category",
+                    data: hourArr,
+                    // boundaryGap: false, // 坐标轴留白
+                },
+                yAxis: {
+                    show: false,
+                    boundaryGap: false,
+                },
+                series: [{
+                    type: "line",
+                    data: tempArr,
+                    lineStyle: {
+                        color: "#fff",
+                        width: '1',
+                    },
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: true,
+                                color: "#fff"
+                            },
+                            color: "#fff",
+                        }
+                    }
+                }]
+            }
+            myEcharts.setOption(options);
+        })
 }
 
 // 本周天气:
@@ -38,8 +142,7 @@ const closeBtn = document.getElementById("close_btn");
     }
     week.innerHTML = week_innerHTML;
 
-    const width = window.innerWidth;
-    const myChart = echarts.init(temper, null, {
+    const weekChart = echarts.init(weatherEcharts, null, {
         width,
         height: 248,
     });
@@ -49,6 +152,7 @@ const closeBtn = document.getElementById("close_btn");
     })
         .then(data => {
             const {daily} = data;
+            // console.log(daily)
             let tempMaxArr = [], tempMinArr = [];
             let weatherArr = [];
             daily.map(item => {
@@ -139,28 +243,9 @@ const closeBtn = document.getElementById("close_btn");
                     }
                 }]
             }
-            myChart.setOption(option);
+            weekChart.setOption(option);
         })
 
-}
-
-// 生活指数:
-{
-    ajax({
-        url: "https://devapi.qweather.com/v7/indices/1d",
-        data: {key, location, type: 0}
-    })
-        .then(data => {
-            const {daily} = data;
-            let innerHTML = "";
-            daily.map(item => {
-                innerHTML += `<li>
-                <img src="../assets/exponent/default.png" alt="icon" />
-                <span>${item.name.slice(0, -2)}<br>${item.category}</span>
-            </li>`
-            })
-            exponent.innerHTML = innerHTML;
-        })
 }
 
 // 下载窗

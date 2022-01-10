@@ -1,5 +1,6 @@
 body, html {
-  margin: 0;
+  max-width: 640px;
+  margin: 0 auto;
   padding: 0 ;
   overflow-x: hidden;
 }
@@ -17,6 +18,7 @@ body {
   bottom: -.2rem;
   img {
     width: 100vw;
+    max-width: 640px;
   }
   span {
     width: 33px;

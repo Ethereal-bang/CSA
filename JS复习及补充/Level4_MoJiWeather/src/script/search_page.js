@@ -12,6 +12,13 @@ const recordList = document.getElementById("record_list");  // ul
 const clearBtn = document.getElementById("clearBtn");
 const hotCities = document.getElementById('hot_cities');    // ul
 
+// GPS
+navigator.geolocation.getCurrentPosition((pos) => {
+    console.log(pos)
+}, err => {
+    console.log("请求位置失败", err)
+})
+
 // 跳转到主页
 returnBtn.addEventListener("click", () => {
     searchPage.setAttribute("style", "display: none");
@@ -40,7 +47,6 @@ searchCityInput.addEventListener("input", (e) => { // 输入框值改变时触�
         .then(data => {
             let innerContent = "";
             data.location?.map(item => {
-                console.log(item.id, item.name)
                 innerContent += `<li><a>${item.name}</a></li>`;
             })
             citiesList.innerHTML = innerContent;
