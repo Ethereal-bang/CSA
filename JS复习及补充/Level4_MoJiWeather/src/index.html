@@ -15,11 +15,11 @@
     <script src="./script/echarts.min.js"></script>
 </head>
 <body>
-<div id="home_page">
+<div id="home_page" style="display: block">
     <div class="background">
         <header>
             <div id="navigate"></div>
-            <p>重庆市</p>
+            <p id="location"></p>
         </header>
         <div id="info_box">
             <a href="https://html5.moji.com/tpd/gzbd/index.html">
@@ -34,49 +34,29 @@
             <div id="degree"></div>
             <div id="aqi">
                 <a>
-                    <span><img src="../assets/aqi.png" alt="aqi"></span>
+                    <span class="api_img"><img src="../assets/info_box/aqi_3.png" alt="aqi"></span>
                     <span class="api"></span>
                 </a>
             </div>
         </div>
     </div>
-    <div id="days">
-        <div>
-            <div>
-                <span>今天</span>
-                <span>良</span>
-                <span>6 / 10°</span>
-            </div>
-            <div>
-                <span>阴</span>
-                <img src="../assets/weather/rain.png" alt="weather">
-            </div>
-        </div>
-        <div>
-            <div>
-                <span>明天</span>
-                <span>轻度</span>
-                <span>6 / 10°</span>
-            </div>
-            <div>
-                <span>阴</span>
-                <img src="../assets/weather/rain.png" alt="weather">
-            </div>
-        </div>
-    </div>
-    <div id="temper">
+    <div id="days"></div>
+    <div id="hour24" class="chose_tab1">
         <div class="tabs1">
-            <span>日落 18:03</span>
-            <strong>24小时</strong>
+            <span id="sunset">日落</span>
+            <strong class="24hour">24小时</strong>
         </div>
-        <div class="tabs2">
-            <span class="active">温度</span>
-            <span>风力</span>
-            <strong>24小时</strong>
+        <div class="tabs2" style="display: none">
+            <span id="tab1" class="active">温度</span>
+            <span id="tab2">风力</span>
+            <strong class="24hour">24小时</strong>
             <div class="echarts"></div>
+            <div class="echarts" style="display: none"></div>
+            <em></em>
+            <span id="temp_num">3°</span>
+            <span id="wind_num" style="display: none">2级</span>
         </div>
     </div>
-    <div></div>
     <div id="week_weather">
         <ul class="week"></ul>
         <ul class="weather"></ul>
@@ -84,15 +64,7 @@
         <div class="echarts"></div>
         <ul class="icons"></ul>
         <ul class="weather"></ul>
-        <ul class="api">
-            <li>良</li>
-            <li>良</li>
-            <li>良</li>
-            <li>良</li>
-            <li>良</li>
-            <li>良</li>
-            <li>良</li>
-        </ul>
+        <ul class="api"></ul>
         <ul class="wind"></ul>   <!--日间风向-->
         <ul class="wind"></ul>   <!--日间风力等级-->
     </div>

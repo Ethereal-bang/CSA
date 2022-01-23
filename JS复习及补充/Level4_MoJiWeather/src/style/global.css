@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, html {
   max-width: 640px;
   margin: 0 auto;
@@ -5,13 +6,29 @@ body, html {
   overflow-x: hidden; }
 
 body {
-  padding-bottom: 64px; }
+  padding-bottom: 84px; }
 
 .showNone {
   display: none; }
 
 .showBlock {
   display: block; }
+
+.warn_1 {
+  /*空气质量等级_优*/
+  background-color: #8fc31f; }
+
+.warn_2 {
+  /*良*/
+  background-color: #d7af0e; }
+
+.warn_3 {
+  /*轻度污染*/
+  background-color: #f39800; }
+
+.warn_4 {
+  /*中度污染*/
+  background-color: #e2361a; }
 
 #download {
   position: fixed;
