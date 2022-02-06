@@ -1,0 +1,41 @@
+Arguments: 
+  E:\Node\node.exe E:\Node\nodejs\node_global\node_modules\yarn\bin\yarn.js init
+
+PATH: 
+  F:\FE-Develop\Test-Webpack\02configuration\node_modules\.bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;E:\Git\cmd;E:\Node\;C:\Program Files\Microsoft VS Code\bin;E:\SSH\bin;E:\Xshell\;E:\Xftp\;E:\Java\jdk1.8.0_73\\bin;C:\Program Files\MySQL\MySQL Server 5.5\bin;E:\MySQL\MySQL Server 5.5\bin;E:\Maven\apache-maven-3.8.4\BIN;;E:\微信开发者工具\微信web开发者工具\dll;E:\Ruby\Ruby27-x64\bin;E:\Python\Scripts\;E:\Python\;C:\Users\HP\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;E:\mingw32\bin;C:\Users\HP\AppData\Roaming\npm;E:\Node\nodejs\node_global;;E:\WebStorm\WebStorm 2021.2.2\bin;;E:\Microsoft VS Code\Microsoft VS Code\bin;E:\Java\IDEA\IntelliJ IDEA 2021.2.3\bin;;E:\Fiddler
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (E:\Node\nodejs\node_global\node_modules\yarn\lib\cli.js:136216:13)
+      at Interface.emit (events.js:315:20)
+      at Interface._ttyWrite (readline.js:875:16)
+      at ReadStream.onkeypress (readline.js:213:10)
+      at ReadStream.emit (events.js:315:20)
+      at emitKeys (internal/readline/utils.js:345:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1144:36)
+      at ReadStream.emit (events.js:315:20)
+      at addChunk (internal/streams/readable.js:309:12)
+
+npm manifest: 
+  {
+    "name": "configuration",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

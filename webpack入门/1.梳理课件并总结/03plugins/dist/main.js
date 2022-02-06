@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector("h2").innerText=4})();
