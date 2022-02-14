@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="home">
+    <label for="username">用户名</label>   <!--label for属性是id引用-->
+    <input required type="text" name="username" id="username">
+    <br /><br />
+    <label for="password">密码</label>
+    <input required type="password" name="pwd" id="password">
+    <br /><br />
+    <button id="register" type="submit">Register</button>
+    <button id="login" type="submit">Login</button>
+    <h1>状态：未登录</h1>
+    <button id="show">Show UsersList</button>
+</div>
+
+<div id="person" style="display: none">
+    个人页面
+    <button class="back">回到登录页</button>
+</div>
+
+</body>
+
+<script type="module" src="./ajax.js"></script>
+<script type="module" src="./main.js"></script>
+</html>
