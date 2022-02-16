@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+
+    p 请注册/登录
+
+    form(method="GET" action="/users/login")
+        label(for="name") Username:
+        input#name.form-control(type='text', placeholder='请输入1~6位用户名' name='name' required='true')
+        br
+        br
+        label(for="password") Password:
+        input#password.form-control(type='password', placeholder='请输入1~6位密码' name='pwd' required='true')
+        br
+        br
+        button(type="submit") Submit:
