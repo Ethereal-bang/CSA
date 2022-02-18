@@ -4,12 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
+const expressJwt = require("express-jwt");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const userInfoRouter = require("./routes/userInfo");
 
 var app = express();
+const secret = "secretOrPrivateKeyXXXX"
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,6 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(expressJwt({
+    secret,
+    algorithms: ["HS256"],  // ?
+})
+    .unless({ // 指定不经token解析的路径
+      path: [/\/*/g, "/", "/users/register"],   // 支持正则
+    }))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

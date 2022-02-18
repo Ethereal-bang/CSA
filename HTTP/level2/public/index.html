@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页</title>
+</head>
+<body>
+    <h1>登录框</h1>
+    <label>
+        <input placeholder="请输入1~6位账户名" type="text">
+    </label>
+    <label>
+        <input id="pwd" placeholder="请输入1~6位密码" type="password">
+    </label>
+    <button>Login</button>
+</body>
+</html>
+<!--引入axios-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    // 登录持久
+    const title = document.querySelector("h1");
+    if (localStorage.getItem("token")) {
+        alert("已登录！");
+        title.innerText = "已登录";
+    }
+
+    const form = {
+        name: document.querySelector("input"),
+        pwd: document.querySelector("#pwd"),
+        btn: document.querySelector("button"),
+    }
+    form.btn.onclick = () => {
+        axios.get("users/login", {
+            params: {
+                name: form.name.value,
+                pwd: form.pwd.value,
+            }
+        })
+            .then(res => {
+                console.log(res)
+                alert(res.data.msg);
+                if (res.data.token) {
+                    localStorage.setItem("token", res.data.token);
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    // 请求拦截
+    axios.interceptors.request.use(config => {
+        // 若存在token，加入响应头
+        if (localStorage.getItem("token")) {
+            config.headers.Authorization = `token ${localStorage.getItem("token")}`;
+        }
+        return config;
+    })
+    axios.interceptors.response.use(res => {
+        return res;
+    })
+</script>

@@ -1,11 +1,13 @@
 extends layout
 
 block content
+    script(defer=true, type="text/javascript", src="/javascripts/login.js")
+
     h1= title
 
     p 请注册/登录
 
-    form(method="GET" action="/users/login")
+    form(method="GET")
         label(for="name") Username:
         input#name.form-control(type='text', placeholder='请输入1~6位用户名' name='name' required='true')
         br
@@ -14,4 +16,5 @@ block content
         input#password.form-control(type='password', placeholder='请输入1~6位密码' name='pwd' required='true')
         br
         br
-        button(type="submit") Submit:
+    button 登录:
+    button 注册:
