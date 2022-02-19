@@ -9,3 +9,4 @@
 + 1.23 [Node.js入门 · 语雀](https://www.yuque.com/ldfgqb/fpkor3/feq47y)
 + 1.31 [webpack入门 · 语雀](https://www.yuque.com/ldfgqb/fpkor3/qvop63)
 + 2.12 [HTTP · 语雀](https://www.yuque.com/ldfgqb/fpkor3/ygl3b6)
++ 2.19 [浏览器运行机制 · 语雀](https://www.yuque.com/ldfgqb/fpkor3/mxkdfk)
